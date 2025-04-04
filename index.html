@@ -37,15 +37,20 @@
 </head>
 <body class="gradient-background text-white">
 
-    <nav class="p-4 flex justify-between items-center">
-        <div class="text-2xl font-semibold">Employee System</div>
-        <ul class="flex space-x-4">
-            <li><a href="#" class="hover:text-gray-300">Home</a></li>
-            <li><a href="#features" class="hover:text-gray-300">Features</a></li>
-            <li><a href="#about" class="hover:text-gray-300">About</a></li>
-            <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-            <li><a href="#" class="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded">Login</a></li>
-        </ul>
+    <nav class="p-4 flex flex-wrap justify-between items-center">
+        <div class="text-2xl font-semibold w-full md:w-auto mb-2 md:mb-0">Employee System</div>
+        <div class="flex items-center w-full md:w-auto">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-4 ml-4">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#features" class="hover:text-gray-300">Features</a></li>
+                <li><a href="#about" class="hover:text-gray-300">About</a></li>
+                <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+                <li><a href="#" class="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded">Login</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section class="hero-section">
@@ -100,7 +105,12 @@
 
     <script>
         new WOW().init();
-    </script>
 
+        $(document).ready(function() {
+            $('#menu-toggle').click(function() {
+                $('#menu').toggleClass('hidden flex flex-col items-center w-full md:flex-row md:w-auto');
+            });
+        });
+    </script>
 </body>
 </html>
