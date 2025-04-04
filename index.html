@@ -3,44 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Employee Management System - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        .sidebar {
-            width: 250px;
-            background: rgba(17, 24, 39, 0.9);
-            backdrop-filter: blur: 10px;
-            -webkit-backdrop-filter: blur(10px);
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            color: #d1d5db;
-            z-index: 10;
-        }
-
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            color: #d1d5db;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: rgba(55, 65, 81, 0.5);
-        }
-
-        .sidebar a i {
-            margin-right: 1rem;
-        }
-
-        .content {
-            margin-left: 250px;
-            padding: 2rem;
+        .gradient-background {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .glassmorphism {
@@ -52,153 +23,84 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .gradient-background{
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .hero-section {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .text-darker {
-            color: #d1d5db;
+        .feature-section {
+            padding: 4rem 0;
         }
-
-        .text-darker-heading {
-            color: #e2e8f0;
-        }
-
     </style>
 </head>
-<body class="gradient-background">
+<body class="gradient-background text-white">
 
-    <aside class="sidebar">
-        <div class="p-4">
-            <h2 class="text-2xl font-semibold mb-6 text-darker-heading">Admin Panel</h2>
+    <nav class="p-4 flex justify-between items-center">
+        <div class="text-2xl font-semibold">Employee System</div>
+        <ul class="flex space-x-4">
+            <li><a href="#" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#features" class="hover:text-gray-300">Features</a></li>
+            <li><a href="#about" class="hover:text-gray-300">About</a></li>
+            <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+            <li><a href="#" class="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 wow animate__animated animate__fadeInDown" data-wow-delay="0.3s">Revolutionize Your Workforce Management</h1>
+            <p class="text-lg md:text-xl mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Streamline processes, boost productivity, and empower your employees.</p>
+            <a href="#" class="bg-green-600 hover:bg-green-700 py-3 px-6 rounded text-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">Get Started</a>
         </div>
-        <nav>
-            <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="#"><i class="fas fa-users"></i> Employees</a>
-            <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
-            <a href="#"><i class="fas fa-bullhorn"></i> Announcements</a>
-            <a href="#"><i class="fas fa-cogs"></i> Settings</a>
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </nav>
-    </aside>
+    </section>
 
-    <main class="content">
-        <div class="glassmorphism p-6 rounded-lg">
-            <h1 class="text-3xl font-semibold text-darker-heading mb-6">Welcome, Admin!</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Employees</h3>
-                    <p class="text-3xl text-blue-300 text-darker">120</p>
+    <section id="features" class="feature-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                    <i class="fas fa-user-check text-4xl mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-2">Employee Tracking</h3>
+                    <p class="text-gray-300">Monitor employee attendance and performance with ease.</p>
                 </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">Active Users</h3>
-                    <p class="text-3xl text-green-300 text-darker">95</p>
+                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                    <i class="fas fa-file-invoice-dollar text-4xl mb-4 text-green-400"></i>
+                    <h3 class="text-xl font-semibold mb-2">Payroll Management</h3>
+                    <p class="text-gray-300">Automate payroll calculations and ensure accurate payments.</p>
                 </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">New Reports</h3>
-                    <p class="text-3xl text-yellow-300 text-darker">15</p>
+                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-yellow-400"></i>
+                    <h3 class="text-xl font-semibold mb-2">Reporting & Analytics</h3>
+                    <p class="text-gray-300">Gain insights with detailed reports and analytics.</p>
                 </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Revenue</h3>
-                    <p class="text-3xl text-indigo-300 text-darker">$500,000</p>
-                </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Salaries Payable</h3>
-                    <p class="text-3xl text-red-300 text-darker">$250,000</p>
-                </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Receivables</h3>
-                    <p class="text-3xl text-teal-300 text-darker">$100,000</p>
-                </div>
-
-                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-2">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Products</h3>
-                    <canvas id="productsChart"></canvas>
-                </div>
-
-                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-2">
-                    <h3 class="text-xl font-semibold text-darker-heading">Total Stocks</h3>
-                    <canvas id="stocksChart"></canvas>
-                </div>
-
-                <div class="glassmorphism p-4 rounded-lg col-span-full">
-                    <h3 class="text-xl font-semibold text-darker-heading">Recent Activity</h3>
-                    <ul class="mt-4">
-                        <li class="py-2 border-b border-gray-700 text-darker">Employee John Doe added.</li>
-                        <li class="py-2 border-b border-gray-700 text-darker">Report generated by Jane Smith.</li>
-                        <li class="py-2 text-darker">Settings updated by Admin.</li>
-                    </ul>
-                </div>
-
-                <div class="glassmorphism p-4 rounded-lg col-span-full">
-                    <h3 class="text-xl font-semibold text-darker-heading">Latest Announcements</h3>
-                    <ul class="mt-4">
-                        <li class="py-2 border-b border-gray-700 text-darker"><strong>Company Meeting:</strong> All employees are required to attend the company meeting on Friday.</li>
-                        <li class="py-2 border-b border-gray-700 text-darker"><strong>Holiday Notice:</strong> Office will be closed on [Date] for [Holiday].</li>
-                        <li class="py-2 text-darker"><strong>New Policy:</strong> Please review the updated company policy document.</li>
-                    </ul>
-                </div>
-
-                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-1">
-                    <h3 class="text-xl font-semibold text-darker-heading">Quick Actions</h3>
-                    <div class="mt-4 space-y-2">
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-darker font-semibold py-2 px-4 rounded">Add Employee</button>
-                        <button class="w-full bg-green-600 hover:bg-green-700 text-darker font-semibold py-2 px-4 rounded">Generate Report</button>
-                        <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-darker font-semibold py-2 px-4 rounded">Update Settings</button>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </main>
+    </section>
+
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">About Us</h2>
+            <p class="text-gray-300 mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">We provide a comprehensive employee management solution designed to streamline your HR processes and improve overall efficiency.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">Contact Us</h2>
+            <p class="text-gray-300 mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Feel free to reach out to us for any inquiries.</p>
+            <a href="mailto:info@example.com" class="bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded text-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">Email Us</a>
+        </div>
+    </section>
+
+    <footer class="text-center py-8">
+        <p class="text-gray-300">&copy; 2024 Employee Management System</p>
+    </footer>
+
     <script>
-        // Sample Chart Data (Replace with your actual data)
-        const productsData = {
-            labels: ['Electronics', 'Clothing', 'Books', 'Furniture'],
-            datasets: [{
-                label: 'Products',
-                data: [30, 50, 20, 40],
-                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
-                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
-                borderWidth: 1
-            }]
-        };
-
-        const stocksData = {
-            labels: ['Electronics', 'Clothing', 'Books', 'Furniture'],
-            datasets: [{
-                label: 'Stocks',
-                data: [100, 200, 150, 180],
-                backgroundColor: ['rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(100, 200, 50, 0.2)','rgba(200, 100, 50, 0.2)'],
-                borderColor: ['rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(100, 200, 50, 1)','rgba(200, 100, 50, 1)'],
-                borderWidth: 1
-            }]
-        };
-
-        // Create Charts
-        new Chart(document.getElementById('productsChart'), {
-            type: 'bar',
-            data: productsData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        new Chart(document.getElementById('stocksChart'), {
-            type: 'line',
-            data: stocksData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        new WOW().init();
     </script>
+
 </body>
 </html>
