@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .sidebar {
+            width: 250px;
+            background: rgba(17, 24, 39, 0.9);
+            backdrop-filter: blur: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #d1d5db;
+            z-index: 10;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            color: #d1d5db;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(55, 65, 81, 0.5);
+        }
+
+        .sidebar a i {
+            margin-right: 1rem;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-background{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .text-darker {
+            color: #d1d5db;
+        }
+
+        .text-darker-heading {
+            color: #e2e8f0;
+        }
+
+    </style>
+</head>
+<body class="gradient-background">
+
+    <aside class="sidebar">
+        <div class="p-4">
+            <h2 class="text-2xl font-semibold mb-6 text-darker-heading">Admin Panel</h2>
+        </div>
+        <nav>
+            <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-users"></i> Employees</a>
+            <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+            <a href="#"><i class="fas fa-bullhorn"></i> Announcements</a>
+            <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <div class="glassmorphism p-6 rounded-lg">
+            <h1 class="text-3xl font-semibold text-darker-heading mb-6">Welcome, Admin!</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Employees</h3>
+                    <p class="text-3xl text-blue-300 text-darker">120</p>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">Active Users</h3>
+                    <p class="text-3xl text-green-300 text-darker">95</p>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">New Reports</h3>
+                    <p class="text-3xl text-yellow-300 text-darker">15</p>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Revenue</h3>
+                    <p class="text-3xl text-indigo-300 text-darker">$500,000</p>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Salaries Payable</h3>
+                    <p class="text-3xl text-red-300 text-darker">$250,000</p>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Receivables</h3>
+                    <p class="text-3xl text-teal-300 text-darker">$100,000</p>
+                </div>
+
+                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-2">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Products</h3>
+                    <canvas id="productsChart"></canvas>
+                </div>
+
+                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-2">
+                    <h3 class="text-xl font-semibold text-darker-heading">Total Stocks</h3>
+                    <canvas id="stocksChart"></canvas>
+                </div>
+
+                <div class="glassmorphism p-4 rounded-lg col-span-full">
+                    <h3 class="text-xl font-semibold text-darker-heading">Recent Activity</h3>
+                    <ul class="mt-4">
+                        <li class="py-2 border-b border-gray-700 text-darker">Employee John Doe added.</li>
+                        <li class="py-2 border-b border-gray-700 text-darker">Report generated by Jane Smith.</li>
+                        <li class="py-2 text-darker">Settings updated by Admin.</li>
+                    </ul>
+                </div>
+
+                <div class="glassmorphism p-4 rounded-lg col-span-full">
+                    <h3 class="text-xl font-semibold text-darker-heading">Latest Announcements</h3>
+                    <ul class="mt-4">
+                        <li class="py-2 border-b border-gray-700 text-darker"><strong>Company Meeting:</strong> All employees are required to attend the company meeting on Friday.</li>
+                        <li class="py-2 border-b border-gray-700 text-darker"><strong>Holiday Notice:</strong> Office will be closed on [Date] for [Holiday].</li>
+                        <li class="py-2 text-darker"><strong>New Policy:</strong> Please review the updated company policy document.</li>
+                    </ul>
+                </div>
+
+                <div class="glassmorphism p-4 rounded-lg col-span-full md:col-span-1">
+                    <h3 class="text-xl font-semibold text-darker-heading">Quick Actions</h3>
+                    <div class="mt-4 space-y-2">
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-darker font-semibold py-2 px-4 rounded">Add Employee</button>
+                        <button class="w-full bg-green-600 hover:bg-green-700 text-darker font-semibold py-2 px-4 rounded">Generate Report</button>
+                        <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-darker font-semibold py-2 px-4 rounded">Update Settings</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script>
+        // Sample Chart Data (Replace with your actual data)
+        const productsData = {
+            labels: ['Electronics', 'Clothing', 'Books', 'Furniture'],
+            datasets: [{
+                label: 'Products',
+                data: [30, 50, 20, 40],
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        const stocksData = {
+            labels: ['Electronics', 'Clothing', 'Books', 'Furniture'],
+            datasets: [{
+                label: 'Stocks',
+                data: [100, 200, 150, 180],
+                backgroundColor: ['rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(100, 200, 50, 0.2)','rgba(200, 100, 50, 0.2)'],
+                borderColor: ['rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(100, 200, 50, 1)','rgba(200, 100, 50, 1)'],
+                borderWidth: 1
+            }]
+        };
+
+        // Create Charts
+        new Chart(document.getElementById('productsChart'), {
+            type: 'bar',
+            data: productsData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('stocksChart'), {
+            type: 'line',
+            data: stocksData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
