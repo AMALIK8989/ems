@@ -1,116 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management System - Landing Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .gradient-background {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero-section {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .feature-section {
-            padding: 4rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emplytic - Employee Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Blended Background */
+    .bg-blended {
+      background-image: url('https://your-image-link.com'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+    }
+  </style>
 </head>
-<body class="gradient-background text-white">
+<body class="font-sans bg-gray-100">
 
-    <nav class="p-4 flex flex-wrap justify-between items-center">
-        <div class="text-2xl font-semibold w-full md:w-auto mb-2 md:mb-0">Employee System</div>
-        <div class="flex items-center w-full md:w-auto">
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul id="menu" class="hidden md:flex space-x-4 ml-4">
-                <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                <li><a href="#features" class="hover:text-gray-300">Features</a></li>
-                <li><a href="#about" class="hover:text-gray-300">About</a></li>
-                <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-                <li><a href="#" class="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded">Login</a></li>
-            </ul>
+  <!-- Header Section -->
+  <header class="relative">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-purple-500 to-blue-500 p-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-2xl font-bold">
+          <a href="#">Emplytic</a>
         </div>
+        <div class="lg:hidden">
+          <button id="navbar-toggler" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex space-x-4">
+          <a href="#features" class="text-white hover:text-gray-200">Features</a>
+          <a href="#contact" class="text-white hover:text-gray-200">Contact</a>
+        </div>
+      </div>
+      <div id="navbar-menu" class="lg:hidden bg-gray-800 text-white p-4 space-y-4">
+        <a href="#features" class="block">Features</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 wow animate__animated animate__fadeInDown" data-wow-delay="0.3s">Revolutionize Your Workforce Management</h1>
-            <p class="text-lg md:text-xl mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Streamline processes, boost productivity, and empower your employees.</p>
-            <a href="#" class="bg-green-600 hover:bg-green-700 py-3 px-6 rounded text-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">Get Started</a>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <div class="bg-blended absolute top-0 left-0 w-full h-full z-0"></div>
+    <div class="relative z-10 text-center py-20 text-white">
+      <h1 class="text-5xl font-bold leading-tight">Emplytic</h1>
+      <p class="mt-4 text-xl">Your Ultimate Employee Management System</p>
+      <a href="#features" class="mt-6 inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg text-lg">Explore Features</a>
+    </div>
+  </header>
 
-    <section id="features" class="feature-section">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">Key Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-                    <i class="fas fa-user-check text-4xl mb-4 text-blue-400"></i>
-                    <h3 class="text-xl font-semibold mb-2">Employee Tracking</h3>
-                    <p class="text-gray-300">Monitor employee attendance and performance with ease.</p>
-                </div>
-                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
-                    <i class="fas fa-file-invoice-dollar text-4xl mb-4 text-green-400"></i>
-                    <h3 class="text-xl font-semibold mb-2">Payroll Management</h3>
-                    <p class="text-gray-300">Automate payroll calculations and ensure accurate payments.</p>
-                </div>
-                <div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+  <!-- Main Content Section -->
+  <main class="px-6 py-12 container mx-auto">
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+      <h2 class="text-4xl text-center font-bold mb-8">Key Features</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Payroll Management</h3>
+          <p class="mt-4">Automate your payroll processes, ensuring employees get paid on time and without errors.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Employee Tracking</h3>
+          <p class="mt-4">Keep track of employee attendance, performance, and work hours with detailed reports.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Performance Analytics</h3>
+          <p class="mt-4">Gain insights into employee performance and productivity, allowing for smarter decisions.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Leave Management</h3>
+          <p class="mt-4">Efficiently manage employee leaves, time-offs, and vacation requests with automated tracking.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Onboarding</h3>
+          <p class="mt-4">Simplify the onboarding process for new employees with easy document management and task tracking.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-semibold">Team Collaboration</h3>
+          <p class="mt-4">Enhance team collaboration with easy-to-use communication tools and project management features.</p>
+        </div>
+<div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
                     <i class="fas fa-chart-line text-4xl mb-4 text-yellow-400"></i>
                     <h3 class="text-xl font-semibold mb-2">Reporting & Analytics</h3>
                     <p class="text-gray-300">Gain insights with detailed reports and analytics.</p>
-                </div>
-            </div>
-        </div>
+</div>
+          
+      </div>
     </section>
 
-    <section id="about" class="py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">About Us</h2>
-            <p class="text-gray-300 mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">We provide a comprehensive employee management solution designed to streamline your HR processes and improve overall efficiency.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-200 py-12">
+      <h2 class="text-4xl text-center font-bold mb-8">Contact Us</h2>
+      <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+          <label for="name" class="block text-lg">Full Name</label>
+          <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg mt-2" required>
         </div>
-    </section>
-
-    <section id="contact" class="py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold mb-8 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">Contact Us</h2>
-            <p class="text-gray-300 mb-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Feel free to reach out to us for any inquiries.</p>
-            <a href="mailto:info@example.com" class="bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded text-lg wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">Email Us</a>
+        <div class="mb-4">
+          <label for="email" class="block text-lg">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg mt-2" required>
         </div>
+        <div class="mb-4">
+          <label for="message" class="block text-lg">Your Message</label>
+          <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded-lg mt-2" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg">Send Message</button>
+      </form>
     </section>
+  </main>
 
-    <footer class="text-center py-8">
-        <p class="text-gray-300">&copy; 2024 Employee Management System</p>
-    </footer>
+  <script>
+    // Navbar toggler functionality
+    const toggler = document.getElementById('navbar-toggler');
+    const menu = document.getElementById('navbar-menu');
+    
+    toggler.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
-    <script>
-        new WOW().init();
-
-        $(document).ready(function() {
-            $('#menu-toggle').click(function() {
-                $('#menu').toggleClass('hidden flex flex-col items-center w-full md:flex-row md:w-auto');
-            });
-        });
-    </script>
 </body>
 </html>
+
+
+
+
