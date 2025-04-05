@@ -3,129 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emplytic - Employee Management System</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom Blended Background */
-    .bg-blended {
-      background-image: url('https://your-image-link.com'); /* Replace with your image URL */
-      background-size: cover;
-      background-position: center;
-      filter: blur(5px);
-    }
-  </style>
-</head>
-<body class="font-sans bg-gray-100">
+  <title>WorkSphere - Employee Management System</title>
 
-  <!-- Header Section -->
-  <header class="relative">
-    <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-purple-500 to-blue-500 p-4 shadow-lg">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="text-white text-2xl font-bold">
-          <a href="#">Emplytic</a>
-        </div>
-        <div class="lg:hidden">
-          <button id="navbar-toggler" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="hidden lg:flex space-x-4">
-          <a href="#features" class="text-white hover:text-gray-200">Features</a>
-          <a href="#contact" class="text-white hover:text-gray-200">Contact</a>
-        </div>
-      </div>
-      <div id="navbar-menu" class="lg:hidden bg-gray-800 text-white p-4 space-y-4">
-        <a href="#features" class="block">Features</a>
-        <a href="#contact" class="block">Contact</a>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- WOW.js CDN -->
+  <script src="https://cdn.rawgit.com/malihu/malihu-custom-scrollbar-plugin/2.0.0/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-transparent py-5 px-6 fixed w-full z-10">
+    <nav class="flex items-center justify-between">
+      <div class="text-white text-2xl font-semibold">WorkSphere</div>
+      <button class="text-white lg:hidden" id="navbar-toggler">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="lg:flex space-x-6 hidden" id="navbar-links">
+        <a href="#features" class="text-white hover:text-gray-400">Features</a>
+        <a href="#contact" class="text-white hover:text-gray-400">Contact</a>
+        <a href="#about" class="text-white hover:text-gray-400">About</a>
+        <a href="#demo" class="text-white hover:text-gray-400">Request Demo</a>
       </div>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="bg-blended absolute top-0 left-0 w-full h-full z-0"></div>
-    <div class="relative z-10 text-center py-20 text-white">
-      <h1 class="text-5xl font-bold leading-tight">Emplytic</h1>
-      <p class="mt-4 text-xl">Your Ultimate Employee Management System</p>
-      <a href="#features" class="mt-6 inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg text-lg">Explore Features</a>
-    </div>
   </header>
 
-  <!-- Main Content Section -->
-  <main class="px-6 py-12 container mx-auto">
+  <!-- Hero Section -->
+  <main>
+    <section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://via.placeholder.com/1920x1080');">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="text-white z-10">
+        <h1 class="text-5xl font-bold animate__animated animate__fadeInUp">Welcome to WorkSphere</h1>
+        <p class="mt-4 text-xl animate__animated animate__fadeInUp animate__delay-1s">A futuristic employee management system to streamline your team’s workflow.</p>
+        <button class="mt-6 px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">Request a Demo</button>
+      </div>
+    </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20">
-      <h2 class="text-4xl text-center font-bold mb-8">Key Features</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Payroll Management</h3>
-          <p class="mt-4">Automate your payroll processes, ensuring employees get paid on time and without errors.</p>
+    <section id="features" class="py-16 px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-semibold text-gray-800">Our Features</h2>
+        <p class="text-gray-600">Enhance your business with these powerful features</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Employee Tracking</h3>
+          <p class="text-gray-600 mt-2">Track employee work hours, performance, and more in real-time.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Employee Tracking</h3>
-          <p class="mt-4">Keep track of employee attendance, performance, and work hours with detailed reports.</p>
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-file-invoice-dollar text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Payroll Management</h3>
+          <p class="text-gray-600 mt-2">Automate payroll processing and ensure accurate payments every time.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Performance Analytics</h3>
-          <p class="mt-4">Gain insights into employee performance and productivity, allowing for smarter decisions.</p>
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-tasks text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Task Management</h3>
+          <p class="text-gray-600 mt-2">Assign tasks, track progress, and collaborate with your team seamlessly.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Leave Management</h3>
-          <p class="mt-4">Efficiently manage employee leaves, time-offs, and vacation requests with automated tracking.</p>
+        <!-- Feature 4: Reports -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Reports & Analytics</h3>
+          <p class="text-gray-600 mt-2">Generate real-time reports and detailed analytics to make data-driven decisions.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Onboarding</h3>
-          <p class="mt-4">Simplify the onboarding process for new employees with easy document management and task tracking.</p>
+        <!-- Feature 5: Employee Performance -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-star text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Employee Performance</h3>
+          <p class="text-gray-600 mt-2">Monitor and analyze employee performance, identify growth areas, and reward top performers.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-          <h3 class="text-2xl font-semibold">Team Collaboration</h3>
-          <p class="mt-4">Enhance team collaboration with easy-to-use communication tools and project management features.</p>
+        <!-- Feature 6: Document Management -->
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <i class="fas fa-folder text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold text-gray-800">Document Management</h3>
+          <p class="text-gray-600 mt-2">Store and manage employee documents, contracts, and other important files securely.</p>
         </div>
-<div class="text-center wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
-                    <i class="fas fa-chart-line text-4xl mb-4 text-yellow-400"></i>
-                    <h3 class="text-xl font-semibold mb-2">Reporting & Analytics</h3>
-                    <p class="text-gray-300">Gain insights with detailed reports and analytics.</p>
-</div>
-          
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16 px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-semibold text-gray-800">About WorkSphere</h2>
+        <p class="text-gray-600">WorkSphere is an intuitive, powerful tool for managing your team with ease. Created by industry experts, it’s designed to simplify workflows, increase productivity, and enhance the overall employee experience.</p>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-200 py-12">
-      <h2 class="text-4xl text-center font-bold mb-8">Contact Us</h2>
-      <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <div class="mb-4">
-          <label for="name" class="block text-lg">Full Name</label>
-          <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg mt-2" required>
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block text-lg">Email Address</label>
-          <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg mt-2" required>
-        </div>
-        <div class="mb-4">
-          <label for="message" class="block text-lg">Your Message</label>
-          <textarea id="message" name="message" class="w-full p-3 border border-gray-300 rounded-lg mt-2" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg">Send Message</button>
-      </form>
+    <section id="contact" class="py-16 px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-semibold text-gray-800">Get in Touch</h2>
+        <p class="text-gray-600">Have questions? We're here to help you.</p>
+      </div>
+      <div class="flex justify-center">
+        <button class="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">Contact Us</button>
+      </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+      <p>&copy; 2025 WorkSphere, Inc. All rights reserved.</p>
+    </footer>
   </main>
 
+  <!-- JavaScript to Toggle Navbar -->
   <script>
-    // Navbar toggler functionality
-    const toggler = document.getElementById('navbar-toggler');
-    const menu = document.getElementById('navbar-menu');
+    const navbarToggler = document.getElementById('navbar-toggler');
+    const navbarLinks = document.getElementById('navbar-links');
     
-    toggler.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    navbarToggler.addEventListener('click', () => {
+      navbarLinks.classList.toggle('hidden');
     });
   </script>
 
 </body>
 </html>
-
-
-
-
